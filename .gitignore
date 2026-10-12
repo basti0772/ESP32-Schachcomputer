@@ -1,0 +1,11 @@
+.test-deps/
+.dev-tools/
+__pycache__/
+*.pyc
+build/
+*.elf
+*.map
+serial-chess.log
+/test-game.pgn
+/touch-test-results.json
+ESP32ChessTouch-Flash/esptool-path.txt

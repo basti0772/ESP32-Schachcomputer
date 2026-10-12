@@ -35,9 +35,10 @@ Der Port wird automatisch erkannt. Optional `-Port COM3` oder
 `-EsptoolPath "C:\Tools\esptool.exe"` angeben. Bei Übertragungsproblemen hilft
 `-Baud 115200`. Andere serielle Programme vor dem Flashen schließen.
 
-Die mitgelieferten Binärdateien sind der zuletzt erfolgreich geflashte
-Touch-Schachstand vom September 2026. Sie sind unabhängig von eventuell späteren
-Quellcodeänderungen. Vor dem Upload werden SHA256-Prüfsummen geprüft.
+Das mitgelieferte Anwendungs-Binary wurde am 12.10.2026 aus den unveränderten
+Touch-Schachquellen neu gebaut, mit neutralisierten Compiler-Diagnosepfaden.
+Bootloader und Partitionen stammen vom zuvor erfolgreich geflashten Stand.
+Für das neu gebaute Binary wurde kein erneuter Hardwaretest ausgeführt. Vor dem Upload werden SHA256-Prüfsummen geprüft.
 Die NVS-Kalibrierung des bisherigen Partitionslayouts wird nicht gelöscht.
 
 [Ausführliche Flash-Anleitung](ESP32ChessTouch-Flash/README.md)
@@ -103,3 +104,4 @@ angeschlossenen ESP32. Die eigentliche Firmware benötigt kein Python.
 
 Fremdbibliotheken werden über Arduino beziehungsweise pip installiert und sind
 nicht als lokale Entwicklungsumgebung mitkopiert. Siehe [Drittanbieterhinweise](THIRD_PARTY.md).
+

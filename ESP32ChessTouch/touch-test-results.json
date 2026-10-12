@@ -1,0 +1,706 @@
+[
+  {
+    "command": "touchinfo",
+    "reply": [
+      "TOUCH calibrated=0 calibrating=1 step=0 pressure=12 rotation=3 selected=-1 promotion=-1",
+      "READY"
+    ]
+  },
+  {
+    "command": "calibrate cancel",
+    "reply": [
+      "READY"
+    ]
+  },
+  {
+    "command": "selftest",
+    "reply": [
+      "TEST perft3 got=8902 expected=8902 PASS",
+      "TEST perft3 got=97862 expected=97862 PASS",
+      "TEST perft3 got=2812 expected=2812 PASS",
+      "TEST perft3 got=9467 expected=9467 PASS",
+      "SELFTEST PASS",
+      "READY"
+    ]
+  },
+  {
+    "command": "new",
+    "reply": [
+      "FEN rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "auto off",
+    "reply": [
+      "OK auto off",
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 131 185",
+    "reply": [
+      "READY"
+    ]
+  },
+  {
+    "command": "touchinfo",
+    "reply": [
+      "TOUCH calibrated=0 calibrating=0 step=0 pressure=11 rotation=3 selected=20 promotion=-1",
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 131 107",
+    "reply": [
+      "READY"
+    ]
+  },
+  {
+    "command": "board",
+    "reply": [
+      "FEN rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 131 133",
+    "reply": [
+      "MOVE e2e4",
+      "FEN rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "new",
+    "reply": [
+      "FEN rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "auto off",
+    "reply": [
+      "OK auto off",
+      "READY"
+    ]
+  },
+  {
+    "command": "a2a4",
+    "reply": [
+      "MOVE a2a4",
+      "FEN rnbqkbnr/pppppppp/8/8/P7/8/1PPPPPPP/RNBQKBNR b KQkq a3 0 1",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h7h5",
+    "reply": [
+      "MOVE h7h5",
+      "FEN rnbqkbnr/ppppppp1/8/7p/P7/8/1PPPPPPP/RNBQKBNR w KQkq h6 0 2",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "a4a5",
+    "reply": [
+      "MOVE a4a5",
+      "FEN rnbqkbnr/ppppppp1/8/P6p/8/8/1PPPPPPP/RNBQKBNR b KQkq - 0 2",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h5h4",
+    "reply": [
+      "MOVE h5h4",
+      "FEN rnbqkbnr/ppppppp1/8/P7/7p/8/1PPPPPPP/RNBQKBNR w KQkq - 0 3",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "a5a6",
+    "reply": [
+      "MOVE a5a6",
+      "FEN rnbqkbnr/ppppppp1/P7/8/7p/8/1PPPPPPP/RNBQKBNR b KQkq - 0 3",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h4h3",
+    "reply": [
+      "MOVE h4h3",
+      "FEN rnbqkbnr/ppppppp1/P7/8/8/7p/1PPPPPPP/RNBQKBNR w KQkq - 0 4",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "a6b7",
+    "reply": [
+      "MOVE a6b7",
+      "FEN rnbqkbnr/pPppppp1/8/8/8/7p/1PPPPPPP/RNBQKBNR b KQkq - 0 4",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h3g2",
+    "reply": [
+      "MOVE h3g2",
+      "FEN rnbqkbnr/pPppppp1/8/8/8/8/1PPPPPpP/RNBQKBNR w KQkq - 0 5",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 53 55",
+    "reply": [
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 27 29",
+    "reply": [
+      "READY"
+    ]
+  },
+  {
+    "command": "touchinfo",
+    "reply": [
+      "TOUCH calibrated=0 calibrating=0 step=0 pressure=21 rotation=3 selected=97 promotion=112",
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 274 110",
+    "reply": [
+      "MOVE b7a8q",
+      "FEN Qnbqkbnr/p1ppppp1/8/8/8/8/1PPPPPpP/RNBQKBNR b KQk - 0 5",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "new",
+    "reply": [
+      "FEN rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "auto off",
+    "reply": [
+      "OK auto off",
+      "READY"
+    ]
+  },
+  {
+    "command": "a2a4",
+    "reply": [
+      "MOVE a2a4",
+      "FEN rnbqkbnr/pppppppp/8/8/P7/8/1PPPPPPP/RNBQKBNR b KQkq a3 0 1",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h7h5",
+    "reply": [
+      "MOVE h7h5",
+      "FEN rnbqkbnr/ppppppp1/8/7p/P7/8/1PPPPPPP/RNBQKBNR w KQkq h6 0 2",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "a4a5",
+    "reply": [
+      "MOVE a4a5",
+      "FEN rnbqkbnr/ppppppp1/8/P6p/8/8/1PPPPPPP/RNBQKBNR b KQkq - 0 2",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h5h4",
+    "reply": [
+      "MOVE h5h4",
+      "FEN rnbqkbnr/ppppppp1/8/P7/7p/8/1PPPPPPP/RNBQKBNR w KQkq - 0 3",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "a5a6",
+    "reply": [
+      "MOVE a5a6",
+      "FEN rnbqkbnr/ppppppp1/P7/8/7p/8/1PPPPPPP/RNBQKBNR b KQkq - 0 3",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h4h3",
+    "reply": [
+      "MOVE h4h3",
+      "FEN rnbqkbnr/ppppppp1/P7/8/8/7p/1PPPPPPP/RNBQKBNR w KQkq - 0 4",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "a6b7",
+    "reply": [
+      "MOVE a6b7",
+      "FEN rnbqkbnr/pPppppp1/8/8/8/7p/1PPPPPPP/RNBQKBNR b KQkq - 0 4",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h3g2",
+    "reply": [
+      "MOVE h3g2",
+      "FEN rnbqkbnr/pPppppp1/8/8/8/8/1PPPPPpP/RNBQKBNR w KQkq - 0 5",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 53 55",
+    "reply": [
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 27 29",
+    "reply": [
+      "READY"
+    ]
+  },
+  {
+    "command": "touchinfo",
+    "reply": [
+      "TOUCH calibrated=0 calibrating=0 step=0 pressure=10 rotation=3 selected=97 promotion=112",
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 274 144",
+    "reply": [
+      "MOVE b7a8r",
+      "FEN Rnbqkbnr/p1ppppp1/8/8/8/8/1PPPPPpP/RNBQKBNR b KQk - 0 5",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "new",
+    "reply": [
+      "FEN rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "auto off",
+    "reply": [
+      "OK auto off",
+      "READY"
+    ]
+  },
+  {
+    "command": "a2a4",
+    "reply": [
+      "MOVE a2a4",
+      "FEN rnbqkbnr/pppppppp/8/8/P7/8/1PPPPPPP/RNBQKBNR b KQkq a3 0 1",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h7h5",
+    "reply": [
+      "MOVE h7h5",
+      "FEN rnbqkbnr/ppppppp1/8/7p/P7/8/1PPPPPPP/RNBQKBNR w KQkq h6 0 2",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "a4a5",
+    "reply": [
+      "MOVE a4a5",
+      "FEN rnbqkbnr/ppppppp1/8/P6p/8/8/1PPPPPPP/RNBQKBNR b KQkq - 0 2",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h5h4",
+    "reply": [
+      "MOVE h5h4",
+      "FEN rnbqkbnr/ppppppp1/8/P7/7p/8/1PPPPPPP/RNBQKBNR w KQkq - 0 3",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "a5a6",
+    "reply": [
+      "MOVE a5a6",
+      "FEN rnbqkbnr/ppppppp1/P7/8/7p/8/1PPPPPPP/RNBQKBNR b KQkq - 0 3",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h4h3",
+    "reply": [
+      "MOVE h4h3",
+      "FEN rnbqkbnr/ppppppp1/P7/8/8/7p/1PPPPPPP/RNBQKBNR w KQkq - 0 4",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "a6b7",
+    "reply": [
+      "MOVE a6b7",
+      "FEN rnbqkbnr/pPppppp1/8/8/8/7p/1PPPPPPP/RNBQKBNR b KQkq - 0 4",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h3g2",
+    "reply": [
+      "MOVE h3g2",
+      "FEN rnbqkbnr/pPppppp1/8/8/8/8/1PPPPPpP/RNBQKBNR w KQkq - 0 5",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 53 55",
+    "reply": [
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 27 29",
+    "reply": [
+      "READY"
+    ]
+  },
+  {
+    "command": "touchinfo",
+    "reply": [
+      "TOUCH calibrated=0 calibrating=0 step=0 pressure=11 rotation=3 selected=97 promotion=112",
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 274 178",
+    "reply": [
+      "MOVE b7a8b",
+      "FEN Bnbqkbnr/p1ppppp1/8/8/8/8/1PPPPPpP/RNBQKBNR b KQk - 0 5",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "new",
+    "reply": [
+      "FEN rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "auto off",
+    "reply": [
+      "OK auto off",
+      "READY"
+    ]
+  },
+  {
+    "command": "a2a4",
+    "reply": [
+      "MOVE a2a4",
+      "FEN rnbqkbnr/pppppppp/8/8/P7/8/1PPPPPPP/RNBQKBNR b KQkq a3 0 1",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h7h5",
+    "reply": [
+      "MOVE h7h5",
+      "FEN rnbqkbnr/ppppppp1/8/7p/P7/8/1PPPPPPP/RNBQKBNR w KQkq h6 0 2",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "a4a5",
+    "reply": [
+      "MOVE a4a5",
+      "FEN rnbqkbnr/ppppppp1/8/P6p/8/8/1PPPPPPP/RNBQKBNR b KQkq - 0 2",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h5h4",
+    "reply": [
+      "MOVE h5h4",
+      "FEN rnbqkbnr/ppppppp1/8/P7/7p/8/1PPPPPPP/RNBQKBNR w KQkq - 0 3",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "a5a6",
+    "reply": [
+      "MOVE a5a6",
+      "FEN rnbqkbnr/ppppppp1/P7/8/7p/8/1PPPPPPP/RNBQKBNR b KQkq - 0 3",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h4h3",
+    "reply": [
+      "MOVE h4h3",
+      "FEN rnbqkbnr/ppppppp1/P7/8/8/7p/1PPPPPPP/RNBQKBNR w KQkq - 0 4",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "a6b7",
+    "reply": [
+      "MOVE a6b7",
+      "FEN rnbqkbnr/pPppppp1/8/8/8/7p/1PPPPPPP/RNBQKBNR b KQkq - 0 4",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "h3g2",
+    "reply": [
+      "MOVE h3g2",
+      "FEN rnbqkbnr/pPppppp1/8/8/8/8/1PPPPPpP/RNBQKBNR w KQkq - 0 5",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 53 55",
+    "reply": [
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 27 29",
+    "reply": [
+      "READY"
+    ]
+  },
+  {
+    "command": "touchinfo",
+    "reply": [
+      "TOUCH calibrated=0 calibrating=0 step=0 pressure=12 rotation=3 selected=97 promotion=112",
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 274 212",
+    "reply": [
+      "MOVE b7a8n",
+      "FEN Nnbqkbnr/p1ppppp1/8/8/8/8/1PPPPPpP/RNBQKBNR b KQk - 0 5",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "new",
+    "reply": [
+      "FEN rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 131 185",
+    "reply": [
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 131 133",
+    "reply": [
+      "MOVE e2e4",
+      "FEN rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "INFO depth=1 score=24 nodes=22 pv=b8c6",
+      "INFO depth=2 score=-9 nodes=200 pv=d7d5",
+      "INFO depth=3 score=24 nodes=2740 pv=b8c6",
+      "ENGINE b8c6",
+      "FEN r1bqkbnr/pppppppp/2n5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "board",
+    "reply": [
+      "FEN r1bqkbnr/pppppppp/2n5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 274 144",
+    "reply": [
+      "READY"
+    ]
+  },
+  {
+    "command": "board",
+    "reply": [
+      "FEN r1bqkbnr/pppppppp/2n5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "tap 274 144",
+    "reply": [
+      "FEN rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "INFO depth=1 score=42 nodes=20 pv=b1c3",
+      "INFO depth=2 score=0 nodes=97 pv=b1c3",
+      "INFO depth=3 score=42 nodes=1215 pv=b1c3",
+      "ENGINE b1c3",
+      "FEN rnbqkbnr/pppppppp/8/8/8/2N5/PPPPPPPP/R1BQKBNR b KQkq - 1 1",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "board",
+    "reply": [
+      "FEN rnbqkbnr/pppppppp/8/8/8/2N5/PPPPPPPP/R1BQKBNR b KQkq - 1 1",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "calibrate",
+    "reply": [
+      "TOUCH CALIBRATION: tap four crosses; calibrate cancel aborts",
+      "READY"
+    ]
+  },
+  {
+    "command": "touchinfo",
+    "reply": [
+      "TOUCH calibrated=0 calibrating=1 step=0 pressure=12 rotation=3 selected=-1 promotion=-1",
+      "READY"
+    ]
+  },
+  {
+    "command": "board",
+    "reply": [
+      "FEN rnbqkbnr/pppppppp/8/8/8/2N5/PPPPPPPP/R1BQKBNR b KQkq - 1 1",
+      "RESULT *",
+      "STATE side=black check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "calibrate cancel",
+    "reply": [
+      "READY"
+    ]
+  },
+  {
+    "command": "new",
+    "reply": [
+      "FEN rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "RESULT *",
+      "STATE side=white check=0 heap=294832",
+      "READY"
+    ]
+  },
+  {
+    "command": "calibrate",
+    "reply": [
+      "TOUCH CALIBRATION: tap four crosses; calibrate cancel aborts",
+      "READY"
+    ]
+  }
+]
