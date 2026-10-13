@@ -4,6 +4,17 @@ Eigenständiger Schachcomputer für einen klassischen **ESP32-WROOM-32** mit
 **ILI9341-Display und resistivem SPI-Touch (XPT2046-kompatibel)**.
 Bedienung wahlweise per Touch oder seriell mit 115200 Baud.
 
+## Display
+
+![Display des ESP32-Schachcomputers mit ausgewähltem Springer und markierten Zielfeldern](docs/display-screenshot.png)
+
+Echter Screenshot (320 × 240 Pixel), am 13.10.2026 direkt aus dem
+ILI9341-Displayspeicher über den seriellen Port ausgelesen. Die Stellung zeigt
+1. e4 Sc6 mit ausgewähltem Springer auf g1 und markierten legalen Zielfeldern.
+Für die Aufnahme wurde vorübergehend ein Diagnosebefehl ergänzt und die
+Figur über simulierte Touch-Koordinaten ausgewählt. Danach wurde die normale,
+hier veröffentlichte Firmware wieder installiert.
+
 ## Funktionen
 
 - Schachengine mit Alpha-Beta-Suche, maximal Tiefe 4 und etwa 1,8 Sekunden pro Zug
@@ -38,7 +49,8 @@ Der Port wird automatisch erkannt. Optional `-Port COM3` oder
 Das mitgelieferte Anwendungs-Binary wurde am 12.10.2026 aus den unveränderten
 Touch-Schachquellen neu gebaut, mit neutralisierten Compiler-Diagnosepfaden.
 Bootloader und Partitionen stammen vom zuvor erfolgreich geflashten Stand.
-Für das neu gebaute Binary wurde kein erneuter Hardwaretest ausgeführt. Vor dem Upload werden SHA256-Prüfsummen geprüft.
+Das neu gebaute Binary wurde am 13.10.2026 auf den ESP32 geflasht und seriell
+geprüft: alle vier Selbsttests bestanden, die Touch-Kalibrierung blieb aktiv. Vor dem Upload werden SHA256-Prüfsummen geprüft.
 Die NVS-Kalibrierung des bisherigen Partitionslayouts wird nicht gelöscht.
 
 [Ausführliche Flash-Anleitung](ESP32ChessTouch-Flash/README.md)
@@ -79,7 +91,8 @@ alle vier Umwandlungen und automatische Engine-Antworten bestanden.
 Eine vollständige Partie gegen einen einfachen PC-Testgegner endete nach
 29 Zügen mit einem Sieg des ESP32; das ist keine Elo-Messung.
 Die gespeicherte Touch-Kalibrierung wurde nach erneutem Flashen als aktiv gemeldet.
-Eine visuelle Prüfung des Displays ist im Testprotokoll nicht belegt.
+Das direkt ausgelesene Displaybild wurde am 13.10.2026 visuell geprüft
+(siehe Screenshot oben). Die physische Touch-Genauigkeit wurde dabei nicht neu geprüft.
 
 - [Testbeschreibung](ESP32ChessTouch/TESTS.md)
 - [Testpartie](test-results/test-game.pgn)
@@ -101,6 +114,7 @@ angeschlossenen ESP32. Die eigentliche Firmware benötigt kein Python.
 - `ESP32ChessTouch/`: vollständiges Arduino-Projekt und Windows-Hilfsskripte
 - `ESP32ChessTouch-Flash/`: fertige Firmware, Prüfsummen und Flash-Skript
 - `test-results/`: vorhandene Testergebnisse und Beispielpartie
+- `docs/`: direkt vom Display ausgelesener Screenshot
 
 Fremdbibliotheken werden über Arduino beziehungsweise pip installiert und sind
 nicht als lokale Entwicklungsumgebung mitkopiert. Siehe [Drittanbieterhinweise](THIRD_PARTY.md).
