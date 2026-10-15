@@ -15,6 +15,8 @@ mitgelieferten Firmware-Binärdateien:
   Wird separat installiert; kein Flasher-Programm ist in diesem Repository enthalten.
 - python-chess (nur für PC-Tests): https://github.com/niklasf/python-chess
 - pyserial (nur für PC-Tests): https://github.com/pyserial/pyserial
+- ESP Web Tools 10.1.1 (Browser-Installer, zur Laufzeit von unpkg geladen):
+  https://github.com/esphome/esp-web-tools (Apache-2.0).
 
 Referenzstellungen für die Perft-Tests:
 https://chessprogramming.org/Perft_Results

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ESP32-Schachcomputer per USB direkt im Browser installieren.">
+  <title>ESP32-Schachcomputer · Firmware installieren</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #101814; color: #eaf1eb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 32px 20px; }
+    main { max-width: 940px; margin: auto; }
+    header { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin-bottom: 56px; }
+    a { color: #b3e9c4; text-underline-offset: 4px; }
+    .brand { font-weight: 650; letter-spacing: .02em; }
+    .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+    .eyebrow { color: #a4d8b4; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { font-size: clamp(2rem, 5vw, 3.3rem); line-height: 1.08; margin: 16px 0 24px; }
+    p, li { line-height: 1.6; }
+    .muted { color: #b5c4ba; }
+    .preview { background: #202c24; border: 1px solid #374c3d; padding: 22px; border-radius: 18px; }
+    img { display: block; width: 100%; height: auto; image-rendering: pixelated; }
+    figcaption { margin-top: 12px; font-size: .8rem; color: #b5c4ba; }
+    figure { margin: 0; }
+    .panel { margin-top: 38px; padding: 28px; border: 1px solid #374c3d; border-radius: 18px; background: #19231d; }
+    h2 { font-size: 1.25rem; margin-top: 0; }
+    ol { padding-left: 24px; }
+    li { margin: 8px 0; }
+    button { border: 0; border-radius: 9px; padding: 15px 40px; background: #b8f2c9; color: #102016; font: inherit; font-weight: 700; cursor: pointer; }
+    button:disabled { opacity: .5; cursor: wait; }
+    button:focus-visible, a:focus-visible { outline: 3px solid #fff; outline-offset: 5px; }
+    .warning { border-left: 3px solid #e4bc78; padding-left: 16px; color: #f1d5a7; }
+    footer { margin: 28px 0; font-size: .85rem; color: #b5c4ba; }
+    code { color: #d0e5d7; }
+    @media(max-width: 680px) { .grid { grid-template-columns: 1fr; } header { margin-bottom: 32px; } .panel { padding: 22px; } }
+  </style>
+</head>
+<body>
+<main>
+  <header><span class="brand">♟ ESP32-Schachcomputer</span><a href="https://github.com/basti0772/ESP32-Schachcomputer">GitHub ↗</a></header>
+  <section class="grid">
+    <div>
+      <div class="eyebrow">Touch · Display · Terminal</div>
+      <h1>ESP32 Firmware installieren</h1>
+      <p class="muted">Ein eigenständiger Schachcomputer auf deinem ESP32. Installiere die Firmware direkt per USB – ohne Arduino IDE.</p>
+      <p>Version <strong id="version">wird geladen …</strong><br>Unterstützt: <strong>ESP32 / ESP32-WROOM-32</strong>, 4 MB Flash</p>
+      <p class="muted">Für den vorhandenen ILI9341- und SPI-Touch-Aufbau. ESP32-S2, S3 und C3 werden nicht unterstützt.</p>
+    </div>
+    <figure class="preview"><img src="display-screenshot.png" width="320" height="240" alt="Schachbrett auf dem ILI9341 mit ausgewähltem Springer und markierten Zielfeldern"><figcaption>Echtes Displaybild · 320 × 240 Pixel · Touch und serielles Terminal</figcaption></figure>
+  </section>
+  <section class="panel">
+    <h2>In vier Schritten bereit zum Spielen</h2>
+    <ol><li>ESP32 mit einem USB-Datenkabel anschließen.</li><li>Auf <strong>Install</strong> klicken.</li><li>Den seriellen Port des ESP32 auswählen.</li><li>Installation bestätigen und den Flash-Vorgang abwarten.</li></ol>
+    <p class="warning">Die Installation ersetzt die Firmware und setzt gespeicherte Daten einschließlich Touch-Kalibrierung zurück. Danach die vier Kreuze auf dem Display antippen.</p>
+    <p class="muted">Chrome oder Edge auf einem Desktop-Rechner empfohlen. Serielle Monitore vorher schließen. Bei Verbindungsproblemen BOOT während des Verbindungsaufbaus gedrückt halten.</p>
+    <esp-web-install-button manifest="manifest.json">
+      <button slot="activate" id="install" disabled>Install</button>
+      <span slot="unsupported">Dieser Browser unterstützt Web Serial nicht. Bitte Chrome oder Edge verwenden.</span>
+      <span slot="not-allowed">Bitte diese Seite über HTTPS oder localhost öffnen.</span>
+    </esp-web-install-button>
+    <p id="status" role="status" class="muted">Installer wird geladen …</p>
+    <noscript>Bitte JavaScript aktivieren, um die Firmware im Browser zu installieren.</noscript>
+  </section>
+  <footer>Terminal: 115200 Baud · <a href="https://github.com/basti0772/ESP32-Schachcomputer#browser-installation">Build und manueller Flash</a> · <a href="https://esphome.github.io/esp-web-tools/">ESP Web Tools</a></footer>
+</main>
+<script type="module">
+  const status = document.querySelector('#status');
+  try {
+    const response = await fetch('manifest.json', { cache: 'no-cache' });
+    if (!response.ok) throw new Error('Manifest konnte nicht geladen werden.');
+    const manifest = await response.json();
+    document.querySelector('#version').textContent = manifest.version;
+    await import('https://unpkg.com/esp-web-tools@10.1.1/dist/web/install-button.js?module');
+    await customElements.whenDefined('esp-web-install-button');
+    document.querySelector('#install').disabled = false;
+    status.textContent = 'Bereit. Der Browser fragt beim Verbinden nach dem USB-Port.';
+  } catch (error) {
+    status.textContent = 'Installer konnte nicht geladen werden. Internetverbindung prüfen und Seite neu laden.';
+    console.error(error);
+  }
+</script>
+</body>
+</html>

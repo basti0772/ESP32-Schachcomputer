@@ -1,0 +1,41 @@
+{
+    "name":  "ESP32-Schachcomputer",
+    "version":  "2.0",
+    "fqbn":  "esp32:esp32:esp32",
+    "chipFamily":  "ESP32",
+    "core":  "3.3.12",
+    "flashMode":  "dio",
+    "flashFrequency":  "80m",
+    "flashSize":  "4MB",
+    "partitionScheme":  "default",
+    "mergedOffset":  0,
+    "bytes":  419936,
+    "sha256":  "5c00f84f4da5384604669aca6e89cc181cf8eee02a3b750d27b71de080694ae0",
+    "offsetSource":  "Expanded Arduino recipe.hooks.objcopy merge-bin recipe",
+    "parts":  [
+                  {
+                      "file":  "ESP32ChessTouch.ino.bootloader.bin",
+                      "offset":  4096,
+                      "bytes":  24992,
+                      "sha256":  "47bbbfca119fe87190f63a67af9d85adff6433bcf3812ec92a9b9c9416a53ad1"
+                  },
+                  {
+                      "file":  "ESP32ChessTouch.ino.partitions.bin",
+                      "offset":  32768,
+                      "bytes":  3072,
+                      "sha256":  "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+                  },
+                  {
+                      "file":  "boot_app0.bin",
+                      "offset":  57344,
+                      "bytes":  8192,
+                      "sha256":  "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+                  },
+                  {
+                      "file":  "ESP32ChessTouch.ino.bin",
+                      "offset":  65536,
+                      "bytes":  354400,
+                      "sha256":  "2197959f3a90bad708e86bd2d5d9853368ad7c2c969f35b8a3fb7f613d809543"
+                  }
+              ]
+}

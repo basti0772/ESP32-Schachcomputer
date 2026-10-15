@@ -1,5 +1,7 @@
 # ESP32-Schachcomputer
 
+**[Firmware im Browser installieren](https://basti0772.github.io/ESP32-Schachcomputer/)**
+
 Eigenständiger Schachcomputer für einen klassischen **ESP32-WROOM-32** mit
 **ILI9341-Display und resistivem SPI-Touch (XPT2046-kompatibel)**.
 Bedienung wahlweise per Touch oder seriell mit 115200 Baud.
@@ -28,6 +30,79 @@ hier veröffentlichte Firmware wieder installiert.
 Eine gemessene Elo-Zahl liegt noch nicht vor. Die Partie wird bei Neustart
 zurückgesetzt; die Touch-Kalibrierung bleibt gespeichert. Wiederholung und
 50-Züge-Regel werden automatisch als Remis gewertet.
+
+## Browser Installation
+
+Installer: **https://basti0772.github.io/ESP32-Schachcomputer/**
+
+Unterstützt wird der klassische **ESP32-WROOM-32 / ESP32 Dev Module mit
+4 MB Flash**, ILI9341 und der unten verlinkten Touch-Verkabelung. Keine S2-,
+S3- oder C3-Variante. Benötigt werden ein USB-Datenkabel, ein Desktop-Browser
+mit Web Serial (Chrome oder Edge empfohlen), Internetzugang und gegebenenfalls
+der USB-UART-Treiber des Boards. Die Seite muss über HTTPS geöffnet werden.
+
+1. ESP32 per USB anschließen und serielle Monitore schließen.
+2. Installer öffnen und auf **Install** klicken.
+3. Den seriellen Port des ESP32 auswählen und die Installation bestätigen.
+4. Flash-Vorgang abwarten; anschließend am Display die vier Kreuze kalibrieren.
+
+**Die Browser-Installation ersetzt die Firmware und löscht gespeicherte Daten
+einschließlich Touch-Kalibrierung.** Auch die zusammengeführte BIN enthält
+Füllbytes im NVS-Bereich. Für ein Update mit Erhalt der Kalibrierung den
+bisherigen PowerShell-Flasher mit einzelnen BIN-Dateien verwenden.
+Bei Verbindungsproblemen BOOT beim Verbindungsaufbau gedrückt halten.
+
+### GitHub Pages einmalig aktivieren
+
+Im Repository: **Settings → Pages → Build and deployment → Source:
+Deploy from a branch → Branch: main → Folder: /docs → Save**.
+Nach erfolgreicher Pages-Bereitstellung ist die oben genannte URL erreichbar.
+Diese Repository-Einstellung kann nicht allein durch Dateien aktiviert werden.
+
+### Web-Firmware selbst bauen
+
+Arduino CLI im PATH, ESP32-Core **3.3.12**, TFT_eSPI **2.5.43** und
+Windows PowerShell 5.1 oder PowerShell 7 installieren. Im Repository:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\tools\Build-Web-Firmware.ps1
+powershell -ExecutionPolicy Bypass -File .\tools\Test-Web-Firmware.ps1
+```
+
+Das Skript kompiliert vollständig mit `esp32:esp32:esp32` und bindet die
+mitgelieferte Displaykonfiguration für diesen Build ein. Es verändert keine
+installierte Bibliothekskonfiguration. Die Eingabedateien und Flash-Adressen
+werden aus dem vollständig expandierten Arduino-Merge-Rezept gelesen.
+Das passende esptool erzeugt mit explizitem Zieloffset 0 und den Buildwerten
+für Flash-Modus, Frequenz und Größe eine zusammengeführte BIN.
+
+Ergebnisse: `firmware/ESP32-Schachcomputer.bin`, `firmware/build-info.json`,
+identische Kopien unter `docs/firmware/` und `docs/manifest.json`.
+Die Kopie unter `docs/` ist notwendig: Bei Pages aus `/docs` ist
+`../firmware/` außerhalb der veröffentlichten Seite und funktioniert nicht.
+Die Version stammt zentral aus dem bestehenden Startbanner
+`ESP32 CHESS 2.0` in `ESP32ChessTouch/ESP32ChessTouch.ino`; die Webseite liest
+sie aus dem generierten Manifest. Zum Veröffentlichen neuer Firmware immer
+beide Firmware-Ordner und das Manifest gemeinsam committen.
+
+Der Workflow `Build web firmware` prüft den eingecheckten Installer, baut
+bei Push auf `main` sowie bei Pull Requests und stellt das neue Ergebnis
+als Actions-Artefakt bereit. Er ändert keine veröffentlichten Dateien.
+Der Installer verwendet ausschließlich die dauerhaft eingecheckte BIN,
+keine temporäre Artifact-URL. Rohdaten zu Offsets, Größe und SHA256 stehen
+in `firmware/build-info.json`.
+
+Lokale Vorschau (optional, Python erforderlich):
+
+```powershell
+python -m http.server 8080 --bind 127.0.0.1 --directory docs
+```
+
+Dann `http://localhost:8080` öffnen. Manueller Build des Arduino-Sketches
+und Flashen ohne Browser bleiben wie nachfolgend beschrieben möglich.
+
+Technische Referenzen: [ESP Web Tools](https://esphome.github.io/esp-web-tools/)
+und [GitHub Pages veröffentlichen](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
 ## Schnellstart: fertige Firmware flashen
 

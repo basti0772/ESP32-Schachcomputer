@@ -3,6 +3,16 @@
 __pycache__/
 *.pyc
 build/
+.pio/
+.vscode/
+.idea/
+*.log
+.env
+.env.*
+secrets.h
+secrets.json
+*.pem
+*.key
 *.elf
 *.map
 serial-chess.log

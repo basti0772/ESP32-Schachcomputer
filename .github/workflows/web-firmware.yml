@@ -1,0 +1,42 @@
+name: Build web firmware
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-arduino-cli@v2
+      - name: Install pinned dependencies
+        run: |
+          arduino-cli config init
+          if ($LASTEXITCODE) { throw 'CLI config failed' }
+          arduino-cli config add board_manager.additional_urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
+          if ($LASTEXITCODE) { throw 'Board URL setup failed' }
+          arduino-cli core update-index
+          if ($LASTEXITCODE) { throw 'Index update failed' }
+          arduino-cli core install esp32:esp32@3.3.12
+          if ($LASTEXITCODE) { throw 'Core install failed' }
+          arduino-cli lib install TFT_eSPI@2.5.43
+          if ($LASTEXITCODE) { throw 'Library install failed' }
+      - name: Check committed installer
+        run: ./tools/Test-Web-Firmware.ps1
+      - name: Compile and generate validated web firmware
+        run: ./tools/Build-Web-Firmware.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ESP32-Schachcomputer-web-firmware
+          path: |
+            firmware/
+            docs/
+          include-hidden-files: true
+          if-no-files-found: error
